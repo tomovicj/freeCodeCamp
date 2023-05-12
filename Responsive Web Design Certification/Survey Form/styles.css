@@ -1,0 +1,65 @@
+body {
+  font-family: sans-serif;
+}
+
+h1, p {
+  text-align: center;
+  margin: 1em 0;
+}
+
+div {
+  min-width: 350px;
+  max-width: 500px;
+  width: 60vw;
+  margin: 2rem auto;
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+}
+
+input, textarea, #dropdown {
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid black;
+  background-color: white;
+}
+
+input, #dropdown {
+  height: 2em;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+}
+
+input[type="radio"]:last-of-type {
+  margin-bottom: 1rem;
+}
+
+input[type="checkbox"]:first-of-type {
+  margin-bottom: 0.5rem;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+#submit {
+  margin-top: 2rem;
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+  font-size: 1.3rem;
+}
+
+#submit:hover {
+  background-color: black;
+  color: white;
+  border: 3px solid white;
+}

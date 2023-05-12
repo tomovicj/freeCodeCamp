@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform</p>
+    <div>
+      <form id="survey-form" action="/" method="post">
+        <fieldset>
+          <label id="name-label" for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          <label id="email-label" for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          <label id="number-label" for="number">Age</label>
+          <input type="number" id="number" name="age" min="13" max="120" placeholder="Enter your age">
+        </fieldset>
+        <fieldset>
+          <label for="rating">Our service is</label>
+          <fieldset id="rating">
+            <input type="radio" id="rating-5" name="rating" value="5">
+            <label for="rating-5">Excellent</label><br>
+            <input type="radio" id="rating-4" name="rating" value="4">
+            <label for="rating-4">Good</label><br>
+            <input type="radio" id="rating-3" name="rating" value="3">
+            <label for="rating-3">Average</label><br>
+            <input type="radio" id="rating-2" name="rating" value="2">
+            <label for="rating-2">Bad</label><br>
+            <input type="radio" id="rating-1" name="rating" value="1">
+            <label for="rating-1">Terrible</label><br>
+          </fieldset>
+          <label for="comment-box">Any comments or suggestions?</label>
+          <textarea id="comment-box" name="comment" rows="3" placeholder="Enter your comment here..."></textarea>
+        </fieldset>
+        <fieldset>
+          <label for="dropdown">Where did you hear about us?</label>
+          <select id="dropdown" name="referrer">
+            <option>Website</option>
+            <option>Instagram</option>
+            <option>YouTube</option>
+            <option>Tiktok</opton>
+            <option>Other</option>
+          </select><br>
+          <input id="tos" type="checkbox" name="tos" value="tos">
+          <label for="tos">Agree to Terms and Conditions</label><br>
+          <input id="marketing" type="checkbox" name="marketing" value="marketing">
+          <label for="marketing">Opt-in to Marketing Communications</label>
+        </fieldset>
+        <input type="submit" id="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
