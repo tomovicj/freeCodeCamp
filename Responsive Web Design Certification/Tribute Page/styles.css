@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+  background-color: lightblue;
+}
+
+h1, h2, h3, #img-caption {
+  text-align: center;
+}
+
+h1 {
+  margin: 1.5em;
+}
+
+h3 {
+  margin: 2em 0;
+}
+
+#img-div {
+  margin: 3em auto;
+  width: 80%;
+  max-width: 1024px;
+  min-width: 300px;
+  background-color: white;
+  padding: 1em;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1em; 
+  max-width: 100%;
+  height: auto;
+}
+
+#tribute-info {
+  margin: 0 auto;
+  width: 70%;
+  min-width: 300px;
+}
+
+li {
+  margin-bottom: 1.5em;
+}
