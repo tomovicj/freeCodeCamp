@@ -1,0 +1,217 @@
+:root {
+  --header-height: 4rem;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #e8e4e3;
+  font-family: sans-serif;
+  
+}
+.section {
+  padding-top: calc(var(--header-height) + 1rem);
+}
+
+header {
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: #e8e4e3;
+  top: 0;
+}
+
+#header-img {
+  height: 70%;
+}
+
+nav ul {
+  height: 100%;
+  margin: 0%;
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  align-items: center;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.nav-link {
+    margin: 0 1rem;
+}
+
+.nav-link:last-of-type {
+    margin-right: 2rem;
+}
+
+main {
+  margin: 0 10%;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: auto 40%;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+.feature h3, .feature p {
+  margin: 0;
+}
+
+.icon {
+  width: 60px;
+  height: 48px;
+  text-align: center;
+}
+
+.icon i {
+  color: orange; 
+}
+
+#video-space {
+  overflow-x: hidden;
+}
+
+#video {
+  display: block;
+  margin: auto;
+}
+
+#options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.option {
+  width: 15rem;
+  height: 20rem;
+  padding: 1rem;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.option h3, .option h4, .option p {
+  margin: 0;
+}
+
+.title {
+  background-color: lightgrey;
+  text-align: center;
+  width: calc(100% + 2rem); /* 2rem = padding on both sides 1rem each */
+  margin: -1rem;
+  margin-bottom: 0.25rem;
+  padding: 1rem;
+}
+
+.btn {
+  background-color: orange;
+  border: none;
+  width: 8rem;
+  height: 2.5rem;
+  font-size: 1.3rem;
+}
+
+#contact {
+  text-align: center;
+  margin: 3rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem
+}
+
+input[type="email"] {
+  display: inline-block;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+footer {
+  background-color: lightgray;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 1.5rem;
+}
+
+footer p {
+  margin-bottom: 0;
+  color: gray;
+}
+
+footer a {
+    margin: 0 1rem;
+}
+
+@media only screen and (max-width: 800px)  {
+  nav {
+    display: none;
+  }
+    
+  header {
+    justify-content: center;    
+  }
+
+  .feature {
+    grid-template-columns: auto;
+    gap: 1rem;
+  }
+
+  .feature:first-of-type {
+    margin-top: 1rem;
+  }
+
+  .icon {
+    margin: auto;
+  }
+
+  .desc {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .option {
+    width: 20rem;
+  }
+
+  #video {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+  }
+}
