@@ -1,0 +1,211 @@
+:root {
+    --white: #f0f0f0;
+    --red: #be3144;
+    --blue: #45567d;
+    --gray: #303841;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    width: 100vw;
+    height: 4.5rem;
+    position: fixed;
+    z-index: 1;
+    background-color: var(--red);
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+}
+
+nav ul {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    list-style: none;
+}
+
+.nav-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.nav-link:hover {
+    background-color: var(--blue);
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 4.5rem;
+}
+
+.section:last-of-type {
+    height: calc(100vh - 6rem);
+}
+
+#welcome-section {
+    background: radial-gradient(circle, var(--blue), var(--gray));
+    display: flex;
+    justify-content: center;
+}
+
+#welcome-section div {
+    text-align: center;
+    position: absolute;
+    top: 45%;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    color: var(--white);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: var(--red);
+    font-weight: 200;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+#projects {
+    background-color: var(--blue);
+    min-height: 100vh;
+    height: unset;
+    text-align: center;
+}
+
+#projects h3 {
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: bolder;
+    text-decoration: underline;
+    margin-bottom: 5rem;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 500px);
+    justify-content: center;
+    gap: 5rem;
+    max-width: calc(1500px + calc(5rem * 4));
+    grid-auto-flow: row;
+    overflow: hidden;
+}
+
+.project-tile {
+    background-color: var(--gray);
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.5);
+}
+
+.project-tile img {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.project-tile p {
+    text-align: center;
+}
+
+.btn {
+    background-color: var(--gray);
+    display: inline-block;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    margin: 3rem;
+}
+
+#profiles {
+    background-color: var(--gray);
+    text-align: center;
+
+}
+
+.profiles-container {
+    position: relative;
+    top: 20%;
+}
+
+.profiles-container h3 {
+    color: var(--white);
+    font-family: 'Raleway', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.social-link {
+    font-size: 2rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    display: inline-block;
+    transition: all 0.25s linear;
+}
+
+.social-link:hover {
+    transform: translateY(0.5rem);
+}
+
+.profiles-container i {
+    margin-right: 0.5rem;
+}
+
+footer {
+    background-color: var(--gray);
+    border-top: 5px solid var(--red);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+}
+
+footer p, a {
+    margin: 0;
+    color: var(--white);
+    text-decoration: none;
+    font-size: large;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 1200px) {
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .project-tile {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
