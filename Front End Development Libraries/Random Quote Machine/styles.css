@@ -1,0 +1,13 @@
+.link {
+    text-decoration: none;
+}
+.link:hover {
+    text-decoration: underline;
+}
+#quote-box {
+    max-width: 900px;
+}
+#new-quote:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
