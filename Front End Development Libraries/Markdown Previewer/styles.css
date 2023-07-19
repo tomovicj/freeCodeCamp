@@ -1,0 +1,86 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+}
+
+.section {
+  width: 50%;
+  min-height: 100vh;
+  overflow-wrap: normal;
+}
+
+#editor, #preview {
+  padding: 1rem;
+}
+
+#preview {
+  overflow: hidden;
+}
+
+#editor {
+  height: 100%;
+  width: 100%;
+  resize: none;
+  background-color: #ebedf0;
+  border: none;
+  border-right: 2px solid #dee2e6;
+  font-size: 0.9rem;
+}
+
+#editor:focus {
+  outline: none;
+}
+
+code {
+  background-color: #f1f1f1;
+  color: #333;
+  font-family: Consolas, monospace;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: #f1f1f1;
+  color: #333;
+  font-family: Consolas, monospace;
+  padding: 10px;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+blockquote {
+  background-color: #f9f9f9;
+  border-left: 4px solid #ccc;
+  margin: 10px 0;
+  padding: 10px 20px;
+}
+
+@media only screen and (max-width: 992px) {
+  #root {
+    flex-direction: column-reverse;
+    overflow: hidden;
+  }
+  
+  .section {
+    width: 100%;
+    min-height: unset;
+    height: 50vh;
+  }
+  
+  #editor {
+    border-right: none;
+    border-top: 2px solid #dee2e6;
+  }
+
+  #editor, #preview {
+    overflow: auto;
+  }
+}
