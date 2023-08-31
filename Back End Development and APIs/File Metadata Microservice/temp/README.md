@@ -1,0 +1,1 @@
+All uploaded files will be stored here until all data from them is taken. Then they will be deleted.
