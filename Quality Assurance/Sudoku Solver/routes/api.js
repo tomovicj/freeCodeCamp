@@ -27,6 +27,9 @@ module.exports = function (app) {
       if (conflict.length == 0) {
         return res.json({ valid: true });
       }
+      if (conflict.length == 3 && solver.isAlreadyPlaced(puzzle, coordinates.row, coordinates.col, value)) {
+        return res.json({ valid: true });
+      }
 
       return res.json({ valid: false, conflict });
     });

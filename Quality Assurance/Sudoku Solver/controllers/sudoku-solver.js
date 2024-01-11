@@ -7,25 +7,21 @@ class SudokuSolver {
   }
 
   checkRowPlacement(puzzleString, row, column, value) {
-    const puzzleArray = puzzleString.split("");
-    const board = [];
-    for (let i = 0; i < 9; i++) {
-      board.push(puzzleArray.splice(0, 9));
-    }
+    const board = this.makeBoard(puzzleString);
 
     return board[row].includes(value) === false;
   }
 
   checkColPlacement(puzzleString, row, column, value) {
-    const puzzleArray = puzzleString.split("");
-    const board = [[], [], [], [], [], [], [], [], []];
+    const board = this.makeBoard(puzzleString);
+
     for (let i = 0; i < 9; i++) {
-      for (let j = 0; j < 9; j++) {
-        board[i].push(puzzleArray[(j * 9) + i]);
+      if (board[i][column] == value) {
+        return false;
       }
     }
 
-    return board[column].includes(value) === false;
+    return true;
   }
 
   checkRegionPlacement(puzzleString, row, column, value) {
@@ -51,32 +47,40 @@ class SudokuSolver {
   solve(puzzleString) {
     const board = puzzleString.split("");
 
-    for (let row = 0; row < 9; row++) {
-      for (let col = 0; col < 9; col++) {
-        // If already filled
-        if (board[(row * 9) + col] != ".") continue;
+    for (let i = 0; i < board.length; i++) {
+      if (board[i] != ".") continue;
 
-        // Try every possible number
-        for (let value = 1; value <= 9; value++) {
-          if (this.checkRowPlacement(board.join(""), row, col, value.toString()) &&
-            this.checkColPlacement(board.join(""), row, col, value.toString()) &&
-            this.checkRegionPlacement(board.join(""), row, col, value.toString())
-          ) {
-            board[(row * 9) + col] = value.toString();
-            // Try to find the rest of numbers with this number
-            const x = this.solve(board.join(""));
-            // If not dead end
-            if (x != null) {
-              return x;
-            }
+      const row = Math.floor(i / 9);
+      const column = i - (row * 9);
+      for (let value = 1; value <= 9; value++) {
+        if (this.checkRowPlacement(board.join(""), row, column, value.toString()) &&
+          this.checkColPlacement(board.join(""), row, column, value.toString()) &&
+          this.checkRegionPlacement(board.join(""), row, column, value.toString())
+        ) {
+          board[i] = value.toString();
+          const solution = this.solve(board.join(""));
+          if (solution != null) {
+            return solution;
+          } else {
+            // If solution is not right
+            board[i] = ".";
           }
         }
-        // If dead end
-        // If not solved, it means its impossible or invalid game
-        if (board[(row * 9) + col] == ".") return null;
+      }
+      if (board[i] == ".") {
+        return null;
       }
     }
     return board.join("");
+  }
+
+  makeBoard(puzzleString) {
+    const puzzleArray = puzzleString.split("");
+    const board = [];
+    for (let i = 0; i < 9; i++) {
+      board.push(puzzleArray.slice(i * 9, (i * 9) + 9));
+    }
+    return board;
   }
 
   getRowAndCol(coordinate) {
@@ -86,6 +90,12 @@ class SudokuSolver {
       return { row: y, col: x };
     }
     return null;
+  }
+
+  isAlreadyPlaced(puzzleString, row, column, value) {
+    const board = this.makeBoard(puzzleString);
+    if (board[row][column] == value) return true;
+    return false;
   }
 }
 
